@@ -1,0 +1,247 @@
+<!-- <div class="row">
+  <div class="col-md-8 mx-auto">
+    <div class="container">
+      <mat-card>
+        <mat-tab-group animationDuration="0ms" [selectedIndex]="selectedIndex">
+          <mat-tab label="Basic Info">
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">First Name:</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" [(ngModel)]="firstname" placeholder="first name">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">middle Name:</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" [(ngModel)]="middlename" placeholder="middle name">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">last Name:</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" [(ngModel)]="lastname" placeholder="last name">
+              </div>
+            </div>
+
+            <form novalidate [formGroup]="createform" (ngSubmit)="onSubmit(createform.value)" class="form-group">
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label"> Name:</label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="text" [value]="name" [(ngModel)]="name" formControlName="name"
+                    placeholder="name" readonly>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">date of birth</label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="date" formControlName="dob" placeholder="DOB">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">age</label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="text" formControlName="age" placeholder="age">
+                </div>
+              </div>
+            </form>
+            <div class="text-center">
+              <button mat-button class="btn-primary" (click)="savedata()">save & continue</button>
+
+            </div>
+          </mat-tab>
+
+
+          <mat-tab label="Address">
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">houseNo:</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" placeholder="houseNo" [(ngModel)]="houseNo">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">buildingName:</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" placeholder="buildingName" [(ngModel)]="buildingName">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">area:</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" placeholder="area" [(ngModel)]="area">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">landMark:</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" placeholder="landMark" [(ngModel)]="landMark">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">city:</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" placeholder="city" [(ngModel)]="city">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">state:</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" placeholder="state" [(ngModel)]="state">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">zip:</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" placeholder="zip code" [(ngModel)]="zip">
+              </div>
+            </div>
+            <form novalidate [formGroup]="createform" (ngSubmit)="onSubmit(createform.value)" class="form-group">
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">complete address</label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="text" formControlName="address" placeholder="address"
+                    [(ngModel)]="address" readonly>
+                </div>
+              </div>
+
+            </form>
+            <div class="text-center">
+              <button mat-button class="btn-primary" (click)="saveAddress()">save </button>
+              <button mat-button class="btn-success" (click)="onSubmit(createform.value)">Submit</button>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+        <button mat-button (click)="previousStep()"><span class="fa fa-arrow-left" aria-hidden="true"></span>
+          Previous Step
+        </button>
+        <button mat-button (click)="nextStep()"><span class="fa fa-arrow-right" aria-hidden="true"></span>
+          Next Step
+        </button>
+      </mat-card>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div>
+  {{createform.value | json}}
+</div> -->
+
+
+<!-- using nested formarray -->
+<!-- <div class="container">
+  <form novalidate [formGroup]="demoform">
+    <div formArrayName="name">
+      <div *ngFor="let n of name().controls;let nameIndex=index">
+        <div [formGroupName]="nameIndex">
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">First Name</label>
+            <div class="col-sm-10">
+              <input class="form-control" type="text" formControlName="firstName" placeholder="firstname">
+            </div>
+           </div>
+         
+         <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Middle Name:</label>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" formControlName="middleName" placeholder="middlename">
+          </div>
+         </div>
+         <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Last Name:</label>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" formControlName="lastName" placeholder="lastname">
+          </div>
+        </div>
+        </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">dob</label>
+        <div class="col-sm-10">
+          <input class="form-control" type="date" formControlName="dob" placeholder="dob">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">age</label>
+        <div class="col-sm-10">
+          <input class="form-control" type="text" formControlName="age" placeholder="age">
+        </div>
+      </div>
+
+      <div formArrayName="address">
+        <div *ngFor="let n of address().controls;let addIndex=index">
+          <div [formGroupName]="addIndex">
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">houseNo:</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" formControlName="houseNo" placeholder="houseNo">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">buildingName:</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" formControlName="buildingName"
+                  placeholder="buildingName">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">area:</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" formControlName="area" placeholder="area">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">landMark:</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" formControlName="landMark" placeholder="landMark">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">city:</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" formControlName="city" placeholder="city">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">state:</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" formControlName="state" placeholder="state">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">zip:</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" formControlName="zip" placeholder="zip">
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+<button (click)="addUser(demoform.value)">add</button>
+  </form>
+</div> -->
+
+
+<form novalidate [formGroup]="demoform" (ngSubmit)="submit(demoform.value)">
+  <div [formGroupName]="name">
+       <input placeholder="firstname" formControlName="Firstname" type="text">
+       <input placeholder="lasttname" formControlName="Lastname" type="text">
+  </div>
+  <input placeholder="dob" formControlName="dob" type="date">
+  <input placeholder="age" formControlName="age" type="number">
+  <div [formGroupName]="address">
+    <input placeholder="line1" formControlName="line1" type="text">
+    <input placeholder="city" formControlName="city" type="text">
+    <input placeholder="zip" formControlName="zip" type="number">
+  </div>
+</form>
+<div>
+  <button type="submit" (click)="submit(demoform.value)">submit</button>
+</div>
