@@ -1,0 +1,10 @@
+1) create folder -demoapp any where in pc
+2) make sure ypu have nodejs installed in your pc
+3)go to demoapp folder via cmd --- command "npm install"
+4)command-"npm install -g @angular/cli"
+5)command-"ng new my-first-project
+cd my-first-project
+ng serve"
+6)ng g c create 
+7) replacce create-component.html and create-component.ts files with files from github repository.
+8) now you can edit the create component
